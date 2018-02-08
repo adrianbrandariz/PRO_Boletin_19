@@ -17,6 +17,7 @@
 package com.adrian.boletin19;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 /**
@@ -52,5 +53,17 @@ public class Libreria {
         float precio = Float.parseFloat(JOptionPane.showInputDialog("Precio del libro: "));
         int unidades = Integer.parseInt(JOptionPane.showInputDialog("Unidades del libro: "));
         libreria.add(new Libros(titulo, autor, isbn, precio, unidades));
+    }
+    
+    public void mostrarLibros(){
+        if (libreria.size() >= 1){
+            Collections.sort(libreria);
+            for (Libros ex: libreria){
+                JOptionPane.showMessageDialog(null, ex.toString());
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No hay libros para mostrar");
+        }
     }
 }
