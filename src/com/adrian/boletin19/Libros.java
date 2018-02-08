@@ -83,7 +83,7 @@ public class Libros implements Comparable {
     @Override
     // Método "toString"
     public String toString() {
-        return "Libros{" + "titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", precio=" + precio + ", unidades=" + unidades + '}';
+        return "Libro:\n" + "Título:" + titulo + "\nAutor:" + autor + "\nISBN:" + isbn + "\nPrecio:" + precio + "\nUnidades:" + unidades;
     }
 
     @Override
