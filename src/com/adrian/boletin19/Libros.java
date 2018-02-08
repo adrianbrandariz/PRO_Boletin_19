@@ -20,7 +20,7 @@ package com.adrian.boletin19;
  *
  * @author abrandarizdominguez
  */
-public class Libros {
+public class Libros implements Comparable {
 
     private String titulo, autor, isbn;
     private float precio;
@@ -84,5 +84,18 @@ public class Libros {
     // Método "toString"
     public String toString() {
         return "Libros{" + "titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", precio=" + precio + ", unidades=" + unidades + '}';
+    }
+
+    @Override
+    // Método "compareTo":
+    public int compareTo(Object c) {
+        Libros lib = (Libros) c;
+        if (titulo.compareToIgnoreCase(lib.getTitulo()) > 0) {
+            return 1;
+        } else if (titulo.compareToIgnoreCase(lib.getTitulo()) == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 }
