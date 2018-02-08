@@ -66,4 +66,10 @@ public class Libreria {
             JOptionPane.showMessageDialog(null, "No hay libros para mostrar");
         }
     }
+    
+    public void mostrarLibroDeterminado(){
+        int posicion = Integer.parseInt(JOptionPane.showInputDialog("Posición: ")) - 1;
+        String libro = libreria.get(posicion).toString();
+        JOptionPane.showMessageDialog(null, libro);
+    }
 }
