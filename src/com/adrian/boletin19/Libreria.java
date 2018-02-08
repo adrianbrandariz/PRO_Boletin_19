@@ -72,4 +72,12 @@ public class Libreria {
         String libro = libreria.get(posicion).toString();
         JOptionPane.showMessageDialog(null, libro);
     }
+    
+    public void darBaja() {
+        for (int i=0; i<libreria.size(); i++){
+            if (libreria.get(i).getUnidades() == 0){
+                libreria.remove(i);
+            }
+        }
+    }
 }
