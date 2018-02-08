@@ -17,6 +17,7 @@
 package com.adrian.boletin19;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,7 +31,26 @@ public class Libreria {
         
     }
     
+    public int menu() {
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog(
+                "**** MENU ****\n"
+                + "1) Número de correos\n"
+                + "2) Añadir correo\n"
+                + "3) Detectar correos sin leer\n"
+                + "4) Mostrar primer correo no leído\n"
+                + "5) Mostrar correo de una posición\n"
+                + "6) Elimina un correo concreto (posición)\n"
+                + "7) Salida"));
+        return opcion;
+    }
+    
     public void añadirLibro(){
-        
+        // Libros(String titulo, String autor, String isbn, float precio, int unidades)
+        String titulo = JOptionPane.showInputDialog("Título del libro: ");
+        String autor = JOptionPane.showInputDialog("Autor del libro: ");
+        String isbn = JOptionPane.showInputDialog("Nº ISBN: ");
+        float precio = Float.parseFloat(JOptionPane.showInputDialog("Precio del libro: "));
+        int unidades = Integer.parseInt(JOptionPane.showInputDialog("Unidades del libro: "));
+        libreria.add(new Libros(titulo, autor, isbn, precio, unidades));
     }
 }
