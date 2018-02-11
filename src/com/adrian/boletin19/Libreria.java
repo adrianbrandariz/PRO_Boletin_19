@@ -83,6 +83,6 @@ public class Libreria {
     public void venderLibro(){
         int posicion = Integer.parseInt(JOptionPane.showInputDialog("¿Qué libro se ha vendido?")) - 1;
         libreria.remove(posicion);
-        JOptionPane.showConfirmDialog(null, "Libro vendido.");
+        JOptionPane.showMessageDialog(null, "Libro vendido.");
     }
 }
