@@ -35,13 +35,12 @@ public class Libreria {
     public int menu() {
         int opcion = Integer.parseInt(JOptionPane.showInputDialog(
                 "**** MENU ****\n"
-                + "1) Número de correos\n"
-                + "2) Añadir correo\n"
-                + "3) Detectar correos sin leer\n"
-                + "4) Mostrar primer correo no leído\n"
-                + "5) Mostrar correo de una posición\n"
-                + "6) Elimina un correo concreto (posición)\n"
-                + "7) Salida"));
+                + "1) Mostrar libros\n"
+                + "2) Añadir libro\n"
+                + "3) Vender libro\n"
+                + "4) Dar de baja libros\n"
+                + "5) Consultar un libro determinado\n"
+                + "6) Exit"));
         return opcion;
     }
     
@@ -79,5 +78,11 @@ public class Libreria {
                 libreria.remove(i);
             }
         }
+    }
+    
+    public void venderLibro(){
+        int posicion = Integer.parseInt(JOptionPane.showInputDialog("¿Qué libro se ha vendido?")) - 1;
+        libreria.remove(posicion);
+        JOptionPane.showConfirmDialog(null, "Libro vendido.");
     }
 }
