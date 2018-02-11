@@ -16,6 +16,8 @@
  */
 package pro_boletin_19;
 
+import com.adrian.boletin19.Libreria;
+
 /**
  *
  * @author abrandarizdominguez
@@ -25,6 +27,26 @@ public class PRO_Boletin_19 {
     
     public static void main(String[] args) {
         
+        Libreria lib = new Libreria();
+        int op;
+        
+        do{
+            op = lib.menu();
+            switch(op){
+                case 1: lib.mostrarLibros();
+                    break;
+                case 2: lib.añadirLibro();
+                    break;
+                case 3: lib.venderLibro();
+                    break;
+                case 4: lib.darBaja();
+                    break;
+                case 5: lib.mostrarLibroDeterminado();
+                    break;
+                case 6: if(op == 7 && op == 0)    
+                    System.exit(0);
+            }
+        } while (op!=6); 
     }
     
 }
